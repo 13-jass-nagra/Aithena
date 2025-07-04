@@ -10,11 +10,11 @@ enum Subject {
   language = "language",
   science = "science",
   history = "history",
+  business = "business",
   coding = "coding",
   geography = "geography",
   economics = "economics",
   finance = "finance",
-  business = "business",
 }
 
 type Companion = Models.DocumentList<Models.Document> & {
