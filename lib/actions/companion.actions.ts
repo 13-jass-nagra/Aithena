@@ -115,8 +115,8 @@ export const newCompanionPermissions = async () => {
 
     if(has({ plan: 'pro' })) {
         return true;
-    } else if(has({ feature: "3_companion_limit" })) {
-        limit = 3;
+    } else if(has({ feature: "2_companion_limit" })) {
+        limit = 2;
     } else if(has({ feature: "10_companion_limit" })) {
         limit = 10;
     }
@@ -172,15 +172,15 @@ export const removeBookmark = async (companionId: string, path: string) => {
 };
 
 // It's almost the same as getUserCompanions, but it's for the bookmarked companions
-export const getBookmarkedCompanions = async (userId: string) => {
-  const supabase = createSupabaseClient();
-  const { data, error } = await supabase
-    .from("bookmarks")
-    .select(`companions:companion_id (*)`) // Notice the (*) to get all the companion data
-    .eq("user_id", userId);
-  if (error) {
-    throw new Error(error.message);
-  }
-  // We don't need the bookmarks data, so we return only the companions
-  return data.map(({ companions }) => companions);
-};
+// export const getBookmarkedCompanions = async (userId: string) => {
+//   const supabase = createSupabaseClient();
+//   const { data, error } = await supabase
+//     .from("bookmarks")
+//     .select(`companions:companion_id (*)`) // Notice the (*) to get all the companion data
+//     .eq("user_id", userId);
+//   if (error) {
+//     throw new Error(error.message);
+//   }
+//   // We don't need the bookmarks data, so we return only the companions
+//   return data.map(({ companions }) => companions);
+// };
