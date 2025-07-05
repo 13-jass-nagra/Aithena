@@ -9,10 +9,10 @@ const Navbar = () => {
             <Link href="/">
                 <div className="flex items-center gap-2.5 cursor-pointer">
                     <Image
-                        src="/images/logo.svg"
+                        src="/images/aithena-logo.svg"
                         alt="logo"
-                        width={46}
-                        height={44}
+                        width={80}
+                        height={65}
                     />
                 </div>
             </Link>
